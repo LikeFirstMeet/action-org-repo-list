@@ -37,9 +37,9 @@ export default async function makeTable(
     .filter(repo => !excludeRepoNames.includes(repo.name))
 
   // make a markdown table
-  let table = `| Name | Description | Stars | Latest Commit |\n| ---- | --- | ----------- | ------------- |\n`
+  let table = `repos list \n`
   for (const repo of repoInfo) {
-    table += `| [${repo.name}](${repo.url}) | ${repo.description} | ${repo.stars} | ${repo.latestCommit} |\n`
+    table += `[${repo.name}](${repo.url})\n`
   }
 
   if (wrapWithDetails) {
